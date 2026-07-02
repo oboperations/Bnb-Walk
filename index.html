@@ -247,8 +247,27 @@
   .problem-copy p{ color:var(--ink-soft); margin-top:1.2rem; max-width:520px; }
   .problem-copy p + p{ margin-top:1rem; }
   .problem-visual{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(var(--terracotta-rgb),0.15); border-radius:12px; overflow:hidden; }
-  .ghost-photo{ aspect-ratio:4/3; background:var(--cream); overflow:hidden; }
+  .ghost-photo{ position:relative; aspect-ratio:4/3; background:var(--cream); overflow:hidden; }
   .ghost-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ---------- Missing asset labels ---------- */
+  .asset-missing-label{
+    display:none; background:rgba(43,32,21,0.92); color:#F3E3CF;
+    font-family:'Inter', sans-serif; font-size:0.72rem; font-weight:700;
+    letter-spacing:0.02em; text-align:center; z-index:5; padding:1rem;
+    word-break:break-all; line-height:1.5;
+  }
+  .asset-missing-label strong{
+    display:block; font-size:0.62rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.08em; color:#C1613C; margin-bottom:.35rem;
+  }
+  .asset-missing-label.is-visible{ display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .ghost-photo .asset-missing-label, .compare-panel .asset-missing-label{ position:absolute; inset:0; }
+  .hero-asset-missing-label{
+    position:absolute; top:calc(var(--nav-h) + 16px); left:20px; max-width:260px;
+    border-radius:8px; text-align:left; z-index:3;
+  }
+  .hero-asset-missing-label.is-visible{ display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
 
   /* ---------- How it works ---------- */
   .how{ background:var(--cream); }
@@ -421,9 +440,11 @@
 
   <!-- HERO -->
   <header class="hero" id="hero">
-    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185405_7e7afb03-26a5-4a97-a1fb-2425c44cb363.mp4" type="video/mp4">
+    <!-- FILE NEEDED: assets/hero-video.mp4 (full-bleed hero background, living room + kitchen, cinematic push-in) -->
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" onerror="assetMissing(this)">
+      <source src="assets/hero-video.mp4" type="video/mp4">
     </video>
+    <span class="asset-missing-label hero-asset-missing-label"><strong>Missing File</strong>assets/hero-video.mp4</span>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-copy fade-up">
@@ -475,10 +496,26 @@
         <p class="fade-up">More listings are shipping video tours every month. The hosts still relying on photos alone are quietly losing bookings to the ones who aren't.</p>
       </div>
       <div class="problem-visual fade-up">
-        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185409_e3e63330-5a13-4323-bd33-a8c06eedd30f.png" alt="Flat static listing photo of a short-term rental living room before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
-        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185410_ca48f6b2-57e0-4019-8f6e-84dfede80371.png" alt="Flat static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
-        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185412_90c3c141-f0a7-49e4-a9c0-ad3327d780b1.png" alt="Flat static listing photo of a short-term rental kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
-        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185414_cb433791-2c36-40b5-b892-ed532d8a1319.png" alt="Flat static listing photo of a short-term rental bathroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
+        <!-- FILE NEEDED: assets/problem-living-room.jpg -->
+        <div class="ghost-photo">
+          <img src="assets/problem-living-room.jpg" alt="Flat static listing photo of a short-term rental living room before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896" onerror="assetMissing(this)">
+          <span class="asset-missing-label"><strong>Missing File</strong>assets/problem-living-room.jpg</span>
+        </div>
+        <!-- FILE NEEDED: assets/problem-bedroom.jpg -->
+        <div class="ghost-photo">
+          <img src="assets/problem-bedroom.jpg" alt="Flat static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896" onerror="assetMissing(this)">
+          <span class="asset-missing-label"><strong>Missing File</strong>assets/problem-bedroom.jpg</span>
+        </div>
+        <!-- FILE NEEDED: assets/problem-kitchen.jpg -->
+        <div class="ghost-photo">
+          <img src="assets/problem-kitchen.jpg" alt="Flat static listing photo of a short-term rental kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896" onerror="assetMissing(this)">
+          <span class="asset-missing-label"><strong>Missing File</strong>assets/problem-kitchen.jpg</span>
+        </div>
+        <!-- FILE NEEDED: assets/problem-bathroom.jpg -->
+        <div class="ghost-photo">
+          <img src="assets/problem-bathroom.jpg" alt="Flat static listing photo of a short-term rental bathroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896" onerror="assetMissing(this)">
+          <span class="asset-missing-label"><strong>Missing File</strong>assets/problem-bathroom.jpg</span>
+        </div>
       </div>
     </div>
   </section>
@@ -520,13 +557,17 @@
         <span class="pair-title">Living Room &amp; Kitchen</span>
         <div class="compare-row">
           <div class="compare-panel">
-            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190259_2f0a38b4-a579-40a6-9f88-4a2c734e2dc8.png" alt="Static listing photo of a short-term rental living room and kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768">
+            <!-- FILE NEEDED: assets/showcase-living-room-before.jpg (also reused below as the video poster) -->
+            <img src="assets/showcase-living-room-before.jpg" alt="Static listing photo of a short-term rental living room and kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768" onerror="assetMissing(this)">
+            <span class="asset-missing-label"><strong>Missing File</strong>assets/showcase-living-room-before.jpg</span>
             <span class="compare-label label-before">Before</span>
           </div>
           <div class="compare-panel">
-            <video muted loop playsinline autoplay preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190259_2f0a38b4-a579-40a6-9f88-4a2c734e2dc8.png" aria-label="Cinematic video tour of the same living room and kitchen">
-              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190427_7e1d1097-22ac-4246-b0eb-130f0a77675d.mp4" type="video/mp4">
+            <!-- FILE NEEDED: assets/showcase-living-room-after.mp4 -->
+            <video muted loop playsinline autoplay preload="auto" poster="assets/showcase-living-room-before.jpg" aria-label="Cinematic video tour of the same living room and kitchen" onerror="assetMissing(this)">
+              <source src="assets/showcase-living-room-after.mp4" type="video/mp4">
             </video>
+            <span class="asset-missing-label"><strong>Missing File</strong>assets/showcase-living-room-after.mp4</span>
             <span class="compare-label label-after">After</span>
           </div>
         </div>
@@ -535,13 +576,17 @@
         <span class="pair-title">Primary Bedroom</span>
         <div class="compare-row">
           <div class="compare-panel">
-            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190302_2b921916-bf5a-4f85-a7e8-85267af88d99.png" alt="Static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768">
+            <!-- FILE NEEDED: assets/showcase-bedroom-before.jpg (also reused below as the video poster) -->
+            <img src="assets/showcase-bedroom-before.jpg" alt="Static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768" onerror="assetMissing(this)">
+            <span class="asset-missing-label"><strong>Missing File</strong>assets/showcase-bedroom-before.jpg</span>
             <span class="compare-label label-before">Before</span>
           </div>
           <div class="compare-panel">
-            <video muted loop playsinline autoplay preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190302_2b921916-bf5a-4f85-a7e8-85267af88d99.png" aria-label="Cinematic video tour of the same bedroom">
-              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190429_8a086fa7-7bf9-479b-a1f6-adbdc25b4791.mp4" type="video/mp4">
+            <!-- FILE NEEDED: assets/showcase-bedroom-after.mp4 -->
+            <video muted loop playsinline autoplay preload="auto" poster="assets/showcase-bedroom-before.jpg" aria-label="Cinematic video tour of the same bedroom" onerror="assetMissing(this)">
+              <source src="assets/showcase-bedroom-after.mp4" type="video/mp4">
             </video>
+            <span class="asset-missing-label"><strong>Missing File</strong>assets/showcase-bedroom-after.mp4</span>
             <span class="compare-label label-after">After</span>
           </div>
         </div>
@@ -669,6 +714,14 @@
 
 <script>
   const FORM_ENDPOINT = 'https://hook.us2.make.com/yifn9xwua9ib084rk1gk1wtynfgf1dfc';
+
+  // Shows the "Missing File: assets/..." label in place of a broken image or video.
+  // Fires automatically via onerror, and disappears on its own once the real file is added.
+  function assetMissing(el){
+    el.style.display = 'none';
+    const label = el.parentElement.querySelector('.asset-missing-label');
+    if (label) label.classList.add('is-visible');
+  }
 
   // Fade in on load
   window.addEventListener('load', () => { document.body.style.opacity = '1'; });
