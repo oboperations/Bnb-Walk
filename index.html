@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bnb Walk | Cinematic Video Tours for Short-Term Rental Hosts</title>
+<meta name="description" content="Bnb Walk turns the photos you already have into a cinematic video tour that makes your Airbnb or short-term rental stand out and book faster.">
+<meta name="robots" content="index, follow">
+<!-- [ASSUMED DOMAIN, VERIFY] -->
+<link rel="canonical" href="https://bnbwalk.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bnb Walk | Cinematic Video Tours for Short-Term Rental Hosts">
+<meta property="og:description" content="Bnb Walk turns the photos you already have into a cinematic video tour that makes your Airbnb or short-term rental stand out and book faster.">
+<meta property="og:image" content="assets/social-preview.png">
+<meta property="og:url" content="https://bnbwalk.com/">
+<meta property="og:site_name" content="Bnb Walk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bnb Walk | Cinematic Video Tours for Short-Term Rental Hosts">
+<meta name="twitter:description" content="Bnb Walk turns the photos you already have into a cinematic video tour that makes your Airbnb or short-term rental stand out and book faster.">
+<meta name="twitter:image" content="assets/social-preview.png">
+
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Cinematic video tour production for short-term rental listings",
+  "provider": {
+    "@type": "Organization",
+    "name": "Bnb Walk",
+    "url": "https://bnbwalk.com/",
+    "sameAs": ["https://instagram.com/bnbwalk"]
+  },
+  "areaServed": "Worldwide",
+  "description": "Bnb Walk turns a host's existing listing photos into a cinematic video tour that helps short-term rentals stand out and book faster."
+}
+</script>
+
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --cream-2:#F4E9D8;
+    --cream-3:#ECDCC0;
+    --cream-rgb:251,246,238;
+    --terracotta:#C1613C;
+    --terracotta-dark:#9C4A2C;
+    --terracotta-rgb:193,97,60;
+    --espresso:#2B2015;
+    --ink:#2B2015;
+    --ink-soft:#4A3A28;
+    --muted:#8A7660;
+    --white:#FFFFFF;
+    --nav-h:72px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    opacity:0;
+    transition:opacity .35s ease;
+    -webkit-font-smoothing:antialiased;
+  }
+  .site-wrapper{ overflow-x:hidden; }
+
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font-family:inherit; border:none; background:none; }
+
+  h1,h2{
+    font-family:'Fraunces', serif;
+  }
+  h3,.navbar-logo,.form-title{
+    font-family:'Inter', sans-serif;
+  }
+
+  h1{ font-size:clamp(2.8rem,5.5vw,4.8rem); font-weight:500; letter-spacing:-0.01em; line-height:1.1; }
+  h2{ font-size:clamp(2rem,3.5vw,3rem); font-weight:500; letter-spacing:-0.01em; line-height:1.15; }
+  h3{ font-size:1.05rem; font-weight:700; }
+  p{ font-size:1rem; font-weight:400; }
+
+  .section-label{
+    font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--terracotta); display:inline-block; margin-bottom:1rem; opacity:0; transform:translateX(-12px);
+  }
+  .slide-label.in-view{ opacity:1; transform:translateX(0); transition:all .5s ease; }
+
+  .material-icons-round{
+    font-family:'Material Icons Round' !important;
+    font-style:normal; font-weight:normal; line-height:1; letter-spacing:normal;
+    text-transform:none; display:inline-block; white-space:nowrap; direction:ltr;
+    -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased;
+    user-select:none;
+  }
+
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 5%; }
+  section{ padding:6rem 5%; }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--terracotta); outline-offset:2px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:0.95rem 1.9rem; border-radius:10px; font-weight:700; font-size:0.95rem;
+    cursor:pointer; transition:all .2s ease; white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--terracotta); color:#ffffff !important;
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px); background:var(--terracotta-dark);
+    box-shadow:0 10px 30px rgba(var(--terracotta-rgb),0.35);
+  }
+  .btn-ghost{
+    background:transparent; color:var(--terracotta); border:1.5px solid rgba(var(--terracotta-rgb),0.4);
+  }
+  .btn-ghost:hover{
+    background:rgba(var(--terracotta-rgb),0.27); border-color:rgba(var(--terracotta-rgb),0.7); transform:translateY(-1px);
+  }
+  .btn-white{
+    background:var(--white); color:var(--terracotta-dark) !important;
+  }
+  .btn-white:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+  .btn:active, .btn-white:active{ transform:scale(0.97); }
+  .btn-block{ width:100%; }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:100;
+    display:flex; align-items:center;
+    background:rgba(var(--cream-rgb),0.82);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(var(--terracotta-rgb),0.08);
+    transition:background .2s ease;
+  }
+  .nav.scrolled{ background:rgba(var(--cream-rgb),0.97); }
+  .nav-inner{ width:100%; max-width:1200px; margin:0 auto; padding:0 5%; display:flex; align-items:center; justify-content:space-between; }
+  .navbar-logo{ font-size:1.25rem; font-weight:800; letter-spacing:-0.02em; }
+  .navbar-logo span{ color:var(--terracotta); }
+  .nav-links{ display:flex; align-items:center; gap:2.2rem; }
+  .nav-links a{ font-size:0.92rem; font-weight:600; color:var(--ink-soft); transition:color .2s ease; }
+  .nav-links a:hover{ color:var(--terracotta); }
+  .nav-right{ display:flex; align-items:center; gap:1.2rem; }
+  .nav-ig{ display:flex; align-items:center; color:var(--ink-soft); transition:color .2s ease; }
+  .nav-ig:hover{ color:var(--terracotta); }
+  .nav-ig svg{ width:20px; height:20px; }
+
+  .hamburger{ display:none; flex-direction:column; justify-content:center; gap:5px; width:32px; height:32px; cursor:pointer; z-index:101; }
+  .hamburger span{ display:block; width:100%; height:2px; background:var(--ink); transition:all .3s ease; }
+  .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-backdrop{
+    position:fixed; inset:0; background:rgba(0,0,0,0.6); opacity:0; visibility:hidden;
+    transition:opacity .25s ease; z-index:98;
+  }
+  .mobile-backdrop.open{ opacity:1; visibility:visible; }
+
+  .mobile-menu{
+    position:fixed; top:var(--nav-h); left:0; right:0; background:var(--cream);
+    border-bottom:1px solid rgba(var(--terracotta-rgb),0.12);
+    transform:translateY(-8px); opacity:0; visibility:hidden;
+    transition:all .25s ease; z-index:99; padding:1.5rem 5% 2rem;
+  }
+  .mobile-menu.open{ transform:translateY(0); opacity:1; visibility:visible; }
+  .mobile-menu a{ display:block; padding:0.85rem 0; font-weight:700; font-size:1.05rem; border-bottom:1px solid rgba(var(--terracotta-rgb),0.1); }
+  .mobile-menu .btn{ margin-top:1.2rem; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    min-height:min(100vh,820px);
+    display:flex; align-items:center;
+    padding-top:var(--nav-h);
+    background:var(--espresso);
+  }
+  .hero-bg-video{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+  }
+  .hero-overlay{
+    position:absolute; inset:0; z-index:1;
+    background:linear-gradient(90deg, rgba(43,32,21,0.92) 0%, rgba(43,32,21,0.72) 45%, rgba(43,32,21,0.32) 100%);
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    width:100%; max-width:1200px; margin:0 auto; padding:0 5%;
+  }
+  .hero-copy{ max-width:600px; }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:.55rem; padding:.5rem 1rem;
+    border-radius:999px; background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.22);
+    font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:#F3E3CF; margin-bottom:1.5rem;
+  }
+  .pulse-dot{ width:7px; height:7px; border-radius:50%; background:var(--terracotta); animation:pulse 2s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.45; transform:scale(.82); } }
+
+  .hero h1{ margin-bottom:1.3rem; color:#fff; }
+  .hero-sub{ font-size:1.15rem; color:rgba(255,255,255,0.82); max-width:520px; margin-bottom:2rem; }
+  .hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
+  .hero-chips{ display:flex; align-items:center; flex-wrap:wrap; gap:.6rem; font-size:0.88rem; color:rgba(255,255,255,0.68); font-weight:600; }
+  .chip-dot{ opacity:.5; }
+
+  .btn-ghost-light{
+    background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.5);
+  }
+  .btn-ghost-light:hover{
+    background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.85); transform:translateY(-1px);
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trust-bar{ background:var(--cream-2); padding:3.5rem 5%; border-top:1px solid rgba(var(--terracotta-rgb),0.1); border-bottom:1px solid rgba(var(--terracotta-rgb),0.1); }
+  .trust-grid{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2.5rem; }
+  .trust-item{ display:flex; align-items:flex-start; gap:.9rem; }
+  .trust-icon{
+    flex-shrink:0; width:44px; height:44px; border-radius:10px; background:rgba(var(--terracotta-rgb),0.12);
+    color:var(--terracotta); display:flex; align-items:center; justify-content:center;
+  }
+  .trust-item h3{ margin-bottom:.25rem; }
+  .trust-item p{ color:var(--muted); font-size:0.9rem; }
+
+  /* ---------- Problem ---------- */
+  .problem{ background:var(--cream-3); }
+  .problem-inner{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+  .problem-copy p{ color:var(--ink-soft); margin-top:1.2rem; max-width:520px; }
+  .problem-copy p + p{ margin-top:1rem; }
+  .problem-visual{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(var(--terracotta-rgb),0.15); border-radius:12px; overflow:hidden; }
+  .ghost-photo{ aspect-ratio:4/3; background:var(--cream); overflow:hidden; }
+  .ghost-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ---------- How it works ---------- */
+  .how{ background:var(--cream); }
+  .how-head{ max-width:640px; margin:0 auto 3.5rem; text-align:left; }
+  .steps{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:rgba(var(--terracotta-rgb),0.15); border-radius:14px; overflow:hidden; }
+  .step-card{ background:var(--cream); padding:2.5rem 2rem; }
+  .step-num{ width:40px; height:40px; border-radius:8px; background:rgba(var(--terracotta-rgb),0.12); color:var(--terracotta); display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:1.2rem; }
+  .step-card h3{ font-size:1.15rem; margin-bottom:.6rem; }
+  .step-card p{ color:var(--muted); font-size:0.92rem; }
+
+  /* ---------- Showcase ---------- */
+  .showcase{ background:var(--cream-2); }
+  .showcase-head{ max-width:640px; margin-bottom:3rem; }
+  .showcase-head p{ color:var(--ink-soft); margin-top:1rem; max-width:560px; }
+  .compare-pairs{ max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:3rem; }
+  .pair-title{ display:block; font-weight:700; font-size:1.05rem; margin-bottom:1rem; }
+  .compare-row{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .compare-panel{
+    position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden;
+    transition:transform .4s ease; background:var(--cream-3);
+  }
+  .compare-panel:hover{ transform:scale(1.025); }
+  .compare-panel img, .compare-panel video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .compare-label{
+    position:absolute; bottom:14px; left:14px; font-size:0.72rem; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; padding:.4rem .8rem; border-radius:999px; color:#fff;
+  }
+  .label-before{ background:rgba(43,32,21,0.75); }
+  .label-after{ background:var(--terracotta); }
+  .compare-caption{ text-align:center; margin-top:1.3rem; color:var(--muted); font-size:0.9rem; }
+
+  /* ---------- Why us ---------- */
+  .why{ background:var(--cream); }
+  .why-inner{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
+  .why-copy p{ color:var(--ink-soft); margin-top:1.2rem; max-width:500px; }
+  .why-copy p + p{ margin-top:1rem; }
+  .why-callout{
+    margin-top:2rem; background:rgba(var(--terracotta-rgb),0.08); border:1px solid rgba(var(--terracotta-rgb),0.2);
+    border-radius:14px; padding:1.8rem; max-width:500px;
+  }
+  .why-callout p{ font-weight:700; color:var(--ink); margin-bottom:1.1rem; }
+  .why-points{ display:flex; flex-direction:column; justify-content:center; gap:1.8rem; height:100%; }
+  .why-point{ display:flex; gap:1.2rem; }
+  .num-chip{ flex-shrink:0; width:38px; height:38px; border-radius:8px; background:var(--terracotta); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; }
+  .why-point h3{ margin-bottom:.4rem; }
+  .why-point p{ color:var(--muted); font-size:0.92rem; }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:linear-gradient(135deg,var(--terracotta),var(--terracotta-dark));
+    text-align:left; padding:5.5rem 5%;
+  }
+  .cta-band-inner{ max-width:1200px; margin:0 auto; }
+  .cta-band h2{ color:#fff; max-width:680px; margin-bottom:1rem; }
+  .cta-band p{ color:rgba(255,255,255,0.88); font-size:1.05rem; margin-bottom:2rem; max-width:560px; }
+
+  /* ---------- Contact / form ---------- */
+  .contact{ background:var(--cream-2); }
+  .contact-inner{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:flex-start; }
+  .contact-copy p{ color:var(--ink-soft); margin-top:1.2rem; max-width:480px; }
+  .promise-list{ margin-top:1.8rem; display:flex; flex-direction:column; gap:.9rem; }
+  .promise-list li{ display:flex; align-items:center; gap:.7rem; font-weight:600; color:var(--ink-soft); font-size:0.95rem; }
+  .promise-list .material-icons-round{ color:var(--terracotta); font-size:20px; }
+
+  .form-card{
+    background:var(--white); border:1px solid rgba(var(--terracotta-rgb),0.15); border-radius:16px;
+    padding:2.2rem; box-shadow:0 20px 50px rgba(43,32,21,0.08);
+  }
+  .form-title{ font-size:1.3rem; font-weight:800; margin-bottom:.4rem; }
+  .form-sub{ color:var(--muted); font-size:0.9rem; margin-bottom:1.6rem; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .field{ margin-bottom:1.1rem; }
+  .field label{ display:block; font-size:0.82rem; font-weight:700; color:var(--ink-soft); margin-bottom:.4rem; }
+  .field input, .field select, .field textarea{
+    width:100%; padding:.85rem 1rem; border-radius:9px; border:1.5px solid rgba(var(--terracotta-rgb),0.2);
+    background:var(--cream); font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--ink); transition:all .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--terracotta); background:rgba(var(--terracotta-rgb),0.05);
+  }
+  .field textarea{ resize:vertical; min-height:90px; }
+  .form-fine{ text-align:center; font-size:0.8rem; color:var(--muted); margin-top:1rem; }
+  .form-submit{ margin-top:.4rem; transition:background .3s ease, color .3s ease; }
+  .form-submit.success{ background:#22C55E !important; }
+
+  /* ---------- Footer ---------- */
+  .footer{ background:var(--espresso); color:rgba(255,255,255,0.8); padding:5rem 5% 2rem; }
+  .footer-top{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.12); }
+  .footer-brand .navbar-logo{ color:#fff; }
+  .footer-brand .navbar-logo span{ color:var(--terracotta); }
+  .footer-brand p{ margin-top:.9rem; color:rgba(255,255,255,0.55); max-width:280px; font-size:0.92rem; }
+  .footer h4{ font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1.1rem; }
+  .footer-links{ display:flex; flex-direction:column; gap:.75rem; }
+  .footer-links a{ font-size:0.92rem; color:rgba(255,255,255,0.78); transition:color .2s ease; }
+  .footer-links a:hover{ color:var(--terracotta); }
+  .footer-contact{ display:flex; flex-direction:column; gap:.9rem; align-items:flex-start; }
+  .footer-contact a{ display:flex; align-items:center; gap:.6rem; font-size:0.92rem; color:rgba(255,255,255,0.78); }
+  .footer-contact a:hover{ color:var(--terracotta); }
+  .footer-contact svg{ width:18px; height:18px; }
+  .footer-bottom{ max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding-top:1.6rem; font-size:0.82rem; color:rgba(255,255,255,0.4); flex-wrap:wrap; gap:1rem; }
+
+  /* ---------- Fade up ---------- */
+  .fade-up{ opacity:0; transform:translateY(12px); transition:opacity .2s ease, transform .2s ease; }
+  .fade-up.in-view{ opacity:1; transform:translateY(0); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1024px){
+    section{ padding:4rem 5%; }
+    .problem-inner, .why-inner, .contact-inner{ grid-template-columns:1fr; gap:2.5rem; }
+    .trust-grid{ grid-template-columns:repeat(2,1fr); gap:2rem; }
+    .steps{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .form-row.name-row{ grid-template-columns:1fr 1fr; }
+  }
+
+  @media (max-width:860px){
+    .nav-links, .nav-right .btn, .nav-ig{ display:none; }
+    .hamburger{ display:flex; }
+    .compare-row{ grid-template-columns:1fr; }
+  }
+
+  @media (max-width:480px){
+    section{ padding:3rem 4%; }
+    .hero{ padding-top:calc(var(--nav-h) + 2rem); }
+    .hero-ctas{ flex-direction:column; }
+    .hero-ctas .btn{ width:100%; }
+    .hero-chips{ justify-content:flex-start; }
+    .chip-dot{ display:none; }
+    .trust-grid{ grid-template-columns:1fr; }
+    .trust-item{ flex-direction:column; align-items:center; text-align:center; }
+    .why-copy, .why-callout{ max-width:100%; }
+    .footer-top{ grid-template-columns:1fr; gap:2.2rem; }
+    .footer-contact{ align-items:flex-start; }
+    .why-inner > *{ padding-top:0 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="navbar-logo">Bnb<span>Walk</span></a>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Get Started</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-ig" href="https://instagram.com/bnbwalk" target="_blank" rel="noopener" aria-label="Bnb Walk on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary">Get Your Walkthrough</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#showcase" class="mobile-link">Showcase</a>
+    <a href="#why-us" class="mobile-link">Why Us</a>
+    <a href="#contact" class="mobile-link">Get Started</a>
+    <a href="#contact" class="btn btn-primary btn-block mobile-link">Get Your Walkthrough</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185405_7e7afb03-26a5-4a97-a1fb-2425c44cb363.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-copy fade-up">
+        <span class="hero-badge"><span class="pulse-dot"></span>Now Booking Hosts</span>
+        <h1>Turn Browsers Into Bookings.</h1>
+        <p class="hero-sub">Static photos blend into every other listing on the page. Bnb Walk turns the photos you already have into a cinematic video tour that stops the scroll and gets the click.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Get Your Walkthrough</a>
+          <a href="#showcase" class="btn btn-ghost-light">See Example Tour</a>
+        </div>
+        <div class="hero-chips">
+          <span>No New Photoshoot</span><span class="chip-dot">&bull;</span>
+          <span>Ready In Days</span><span class="chip-dot">&bull;</span>
+          <span>Works On Any Listing Platform</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-grid">
+      <div class="trust-item fade-up">
+        <div class="trust-icon"><span class="material-icons-round">photo_camera</span></div>
+        <div><h3>Just Send Photos</h3><p>No new photoshoot needed. We build your tour from images you already have.</p></div>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="trust-icon"><span class="material-icons-round">schedule</span></div>
+        <div><h3>Fast Turnaround</h3><p>Your tour is delivered in days, so your listing stays fresh without the wait.</p></div>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="trust-icon"><span class="material-icons-round">view_in_ar</span></div>
+        <div><h3>Works Everywhere</h3><p>Drop your tour into Airbnb, VRBO, Booking.com, or your own site.</p></div>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="trust-icon"><span class="material-icons-round">verified</span></div>
+        <div><h3>Built To Convert</h3><p>Every tour is paced around one goal: getting the guest to hit book.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem" id="problem">
+    <div class="problem-inner">
+      <div class="problem-copy">
+        <span class="section-label slide-label">The Problem</span>
+        <h2 class="fade-up">Static Photos Are Costing You Bookings.</h2>
+        <p class="fade-up">A grid of still photos looks like every other listing on the page. Guests scroll past it in seconds, and the booking goes to the place that made them stop scrolling.</p>
+        <p class="fade-up">More listings are shipping video tours every month. The hosts still relying on photos alone are quietly losing bookings to the ones who aren't.</p>
+      </div>
+      <div class="problem-visual fade-up">
+        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185409_e3e63330-5a13-4323-bd33-a8c06eedd30f.png" alt="Flat static listing photo of a short-term rental living room before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
+        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185410_ca48f6b2-57e0-4019-8f6e-84dfede80371.png" alt="Flat static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
+        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185412_90c3c141-f0a7-49e4-a9c0-ad3327d780b1.png" alt="Flat static listing photo of a short-term rental kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
+        <div class="ghost-photo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_185414_cb433791-2c36-40b5-b892-ed532d8a1319.png" alt="Flat static listing photo of a short-term rental bathroom before a Bnb Walk cinematic tour" loading="lazy" width="1200" height="896"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how-it-works">
+    <div class="how-head">
+      <span class="section-label slide-label">How It Works</span>
+      <h2 class="fade-up">From Photos To Booked Nights In Three Steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <h3>Send Your Photos</h3>
+        <p>Upload the photos you already have for your listing. No new shoot, no scheduling a photographer.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <h3>We Build The Tour</h3>
+        <p>We turn your photos into a cinematic video walkthrough that flows from room to room.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <h3>You Get A Video That Converts</h3>
+        <p>Drop it into your listing and watch it do the work of stopping the scroll and earning the click.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="showcase" id="showcase">
+    <div class="showcase-head">
+      <span class="section-label slide-label">See The Difference</span>
+      <h2 class="fade-up">Static Listing vs. Cinematic Tour.</h2>
+      <p class="fade-up">Same property, same photos. One version blends in. The other makes a guest stop and watch.</p>
+    </div>
+    <div class="compare-pairs">
+      <div class="compare-pair fade-up">
+        <span class="pair-title">Living Room &amp; Kitchen</span>
+        <div class="compare-row">
+          <div class="compare-panel">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190259_2f0a38b4-a579-40a6-9f88-4a2c734e2dc8.png" alt="Static listing photo of a short-term rental living room and kitchen before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768">
+            <span class="compare-label label-before">Before</span>
+          </div>
+          <div class="compare-panel">
+            <video muted loop playsinline autoplay preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190259_2f0a38b4-a579-40a6-9f88-4a2c734e2dc8.png" aria-label="Cinematic video tour of the same living room and kitchen">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190427_7e1d1097-22ac-4246-b0eb-130f0a77675d.mp4" type="video/mp4">
+            </video>
+            <span class="compare-label label-after">After</span>
+          </div>
+        </div>
+      </div>
+      <div class="compare-pair fade-up">
+        <span class="pair-title">Primary Bedroom</span>
+        <div class="compare-row">
+          <div class="compare-panel">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190302_2b921916-bf5a-4f85-a7e8-85267af88d99.png" alt="Static listing photo of a short-term rental bedroom before a Bnb Walk cinematic tour" loading="lazy" width="1376" height="768">
+            <span class="compare-label label-before">Before</span>
+          </div>
+          <div class="compare-panel">
+            <video muted loop playsinline autoplay preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190302_2b921916-bf5a-4f85-a7e8-85267af88d99.png" aria-label="Cinematic video tour of the same bedroom">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FURUCpRxjNx7BmASqsWLlm8C3c/hf_20260702_190429_8a086fa7-7bf9-479b-a1f6-adbdc25b4791.mp4" type="video/mp4">
+            </video>
+            <span class="compare-label label-after">After</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="compare-caption">Same rooms, same property. One side is a photo. The other is the cinematic tour.</p>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why-us">
+    <div class="why-inner">
+      <div class="why-copy">
+        <span class="section-label slide-label">Why Bnb Walk</span>
+        <h2 class="fade-up">We Don't Just Make It Look Nice. We Make It Convert.</h2>
+        <p class="fade-up">Anyone can stitch photos into a slideshow. A tour that actually earns a booking needs pacing, flow, and a sense of the space that makes a guest feel like they've already walked through the door.</p>
+        <p class="fade-up">We build every tour around one question: does this make someone want to book tonight. If a shot doesn't earn its place, it doesn't make the cut.</p>
+        <div class="why-callout fade-up">
+          <p>Ready to see your listing look this good?</p>
+          <a href="#contact" class="btn btn-primary">Get Your Walkthrough</a>
+        </div>
+      </div>
+      <div class="why-points">
+        <div class="why-point fade-up">
+          <div class="num-chip">1</div>
+          <div><h3>Cinematic Motion, Not A Slideshow</h3><p>Your tour flows from room to room like a real walkthrough, not photos cut together.</p></div>
+        </div>
+        <div class="why-point fade-up">
+          <div class="num-chip">2</div>
+          <div><h3>Fast Delivery</h3><p>Most tours are ready in days, so your listing doesn't sit stale while you wait.</p></div>
+        </div>
+        <div class="why-point fade-up">
+          <div class="num-chip">3</div>
+          <div><h3>No Extra Shoot</h3><p>We work from the photos you already have. No scheduling, no access issues, no add-on cost of a shoot.</p></div>
+        </div>
+        <div class="why-point fade-up">
+          <div class="num-chip">4</div>
+          <div><h3>Built For Bookings</h3><p>Every tour is paced around what makes a guest stop scrolling and click book, not just what looks pretty.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <h2 class="fade-up">Your Listing Deserves More Than Photos.</h2>
+      <p class="fade-up">Send us the photos you already have and get a cinematic tour that gets the click.</p>
+      <a href="#contact" class="btn btn-white fade-up">Get Your Walkthrough</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-copy">
+        <span class="section-label slide-label">Get Started</span>
+        <h2 class="fade-up">Tell Us About Your Listing.</h2>
+        <p class="fade-up">Send over a few details and your photos, and we'll follow up to get your tour moving. No commitment, just a conversation about what your listing needs.</p>
+        <ul class="promise-list fade-up">
+          <li><span class="material-icons-round">check_circle</span>No new photoshoot required</li>
+          <li><span class="material-icons-round">check_circle</span>Delivered in days, not weeks</li>
+          <li><span class="material-icons-round">check_circle</span>Works with any booking platform</li>
+          <li><span class="material-icons-round">check_circle</span>No obligation, just a conversation</li>
+        </ul>
+      </div>
+      <div class="form-card fade-up">
+        <div class="form-title">Get Your Walkthrough</div>
+        <p class="form-sub">Fill this out and we'll reach out to get started.</p>
+        <form id="quoteForm">
+          <div class="form-row name-row">
+            <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="fname" required></div>
+            <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+            <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required></div>
+          </div>
+          <div class="field"><label for="listing">Listing Link Or Instagram</label><input type="text" id="listing" name="listing" placeholder="Airbnb, VRBO, or Instagram link" required></div>
+          <div class="field"><label for="notes">Tell Us About Your Property</label><textarea id="notes" name="notes" placeholder="Number of rooms, location, anything you'd like us to know" required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block form-submit" id="submitBtn">Send My Request</button>
+          <p class="form-fine">We'll never share your info. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="navbar-logo">Bnb<span>Walk</span></a>
+        <p>Cinematic video tours for hosts who want more bookings, built from the photos you already have.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#showcase">Showcase</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#contact">Get Started</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="https://instagram.com/bnbwalk" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            @bnbwalk
+          </a>
+          <a href="mailto:contact@oboperations.net">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            contact@oboperations.net
+          </a>
+          <a href="#contact" class="btn btn-primary">Get Your Walkthrough</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Bnb Walk. All rights reserved.</span>
+      <span>Cinematic video tours for short-term rentals</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const FORM_ENDPOINT = 'https://hook.us2.make.com/yifn9xwua9ib084rk1gk1wtynfgf1dfc';
+
+  // Fade in on load
+  window.addEventListener('load', () => { document.body.style.opacity = '1'; });
+
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+  function setScrollLock(){
+    const anyOpen = mobileMenu.classList.contains('open');
+    document.body.style.overflow = anyOpen ? 'hidden' : '';
+  }
+
+  function closeMobileMenu(){
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileBackdrop.classList.remove('open');
+    setScrollLock();
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    mobileBackdrop.classList.toggle('open', isOpen);
+    setScrollLock();
+  });
+
+  mobileBackdrop.addEventListener('click', closeMobileMenu);
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Scroll fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('in-view'), i * 50);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up, .slide-label').forEach(el => observer.observe(el));
+
+  // Block pinch and double-tap zoom
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Form submit
+  const form = document.getElementById('quoteForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form));
+
+    if (FORM_ENDPOINT && FORM_ENDPOINT !== '[INSERT FORM ENDPOINT]') {
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).catch(() => {});
+    }
+
+    submitBtn.textContent = 'Request Sent';
+    submitBtn.classList.add('success');
+    submitBtn.disabled = true;
+  });
+</script>
+</body>
+</html>
